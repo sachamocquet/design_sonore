@@ -12,7 +12,7 @@
 	<script src="js/modernizr.custom.js" type="text/javascript"></script>
 	</head>
 
-<body onload="AfficheRegles();" onmousemove="getDistance(event,'nav-one')" >
+<body onload="AfficheRegles();" onmousemove="setVolumeSonDistance(event,'nav-one','beep-one')" >
 
 		<!-- *********************** -->
 		<!-- ***********HEADER ETAPES************ -->
@@ -96,7 +96,7 @@
 		
 			<div class="nav PlayBeepOne">
 				<a id="nav-one" href="#" onmouseover="AfficheFinNiveauUn(); StopCrowd(); StopChrono();"></a>
-				<audio id="beep-one" preload="auto">
+				<audio id="beep-one" preload="auto" autoplay="true" loop="true">
 					<source src="audio/beep-lev-1.mp3"></source>
 					<source src="audio/beep-lev-1.ogg"></source>
 				Votre navigateur ne supporte pas ce format de lecteur audio.

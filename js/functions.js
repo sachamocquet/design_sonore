@@ -15,7 +15,7 @@ function getPosMouse(event){
 	return {x: x,y: y};
 }
 
-function getDistance(event, eId){
+function setVolumeSonDistance(event, eId, sId){
 
 	var el = document.getElementById(eId);
 	var pS = getPosMouse(event);
@@ -29,8 +29,13 @@ function getDistance(event, eId){
 	ys = pS.y - pE.y;
 	ys = ys * ys;
 	d = Math.sqrt( xs + ys );
-	console.log("distance de "+eId+" avec la souris = "+d);
-
+	
+	var vSon = ((1000-d)/1000*100)*0.01;
+	console.log("distance de "+eId+" avec la souris = "+d+" vSon="+vSon);
+	
+	myVid=document.getElementById(sId);
+	myVid.volume=vSon;
+	
     return d;
 
 }
