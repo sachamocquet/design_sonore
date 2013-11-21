@@ -1,4 +1,40 @@
 // *****************
+function getPosEl(el) {
+    var lx = el.offsetLeft; 
+	var ly = el.offsetTop;
+	console.log('el : x='+lx+' y='+ly);
+    return {x: lx,y: ly};
+}
+
+function getPosMouse(event){
+	//merci à http://b2moo.free.fr/tutorials/mouse/coord.htm
+	event = event || window.event;
+	var x = event.clientX;
+	var y = event.clientY;
+	console.log('souris : x='+x+' y='+y);
+	return {x: x,y: y};
+}
+
+function getDistance(event, eId){
+
+	var el = document.getElementById(eId);
+	var pS = getPosMouse(event);
+	var pE = getPosEl(el);
+	
+	//merci à http://snipplr.com/view/47207/
+	var xs = 0;
+	var ys = 0; 
+	xs = pS.x - pE.x;
+	xs = xs * xs;
+	ys = pS.y - pE.y;
+	ys = ys * ys;
+	d = Math.sqrt( xs + ys );
+	console.log("distance de "+eId+" avec la souris = "+d);
+
+    return d;
+
+}
+
 // NIVEAU 2
 
 // Supprimer la page #niveau-un et afficher #niveau-deux

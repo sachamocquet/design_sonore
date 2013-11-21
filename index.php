@@ -12,7 +12,7 @@
 	<script src="js/modernizr.custom.js" type="text/javascript"></script>
 	</head>
 
-<body onload="AfficheRegles();">
+<body onload="AfficheRegles();" onmousemove="getDistance(event,'nav-one')" >
 
 		<!-- *********************** -->
 		<!-- ***********HEADER ETAPES************ -->
@@ -94,17 +94,14 @@
 			Votre navigateur ne supporte pas ce format de lecteur audio.
 			</audio>
 		
-			<ul id="nav-one" class="nav PlayBeepOne">
-		   <li>
-		   	<a href="#" onmouseover="AfficheFinNiveauUn(); StopCrowd(); StopChrono();"></a>
-		   	<audio id="beep-one" preload="auto">
-				<source src="audio/beep-lev-1.mp3"></source>
-				<source src="audio/beep-lev-1.ogg"></source>
-			Votre navigateur ne supporte pas ce format de lecteur audio.
-			</audio>
-			</li>
-
-		</ul>
+			<div class="nav PlayBeepOne">
+				<a id="nav-one" href="#" onmouseover="AfficheFinNiveauUn(); StopCrowd(); StopChrono();"></a>
+				<audio id="beep-one" preload="auto">
+					<source src="audio/beep-lev-1.mp3"></source>
+					<source src="audio/beep-lev-1.ogg"></source>
+				Votre navigateur ne supporte pas ce format de lecteur audio.
+				</audio>
+			</div>
 		
 		</div><!-- fin #main -->
 		
