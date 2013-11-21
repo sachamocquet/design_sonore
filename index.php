@@ -39,11 +39,10 @@
 			<div class="md-content">
 				<h3>Comment jouer ?</h3>
 				<div>
-					<p>This is a modal window. You can do the following things with it :</p>
 					<ul>
-						<li><strong>Read:</strong> modal windows will probably tell you something important so don't forget to read what they say.</li>
-						<li><strong>Look:</strong> a modal window enjoys a certain kind of attention; just look at it and appreciate its presence.</li>
-						<li><strong>Close:</strong> click on the button below to close the modal.</li>
+						<li><strong>Regle 1 :</strong> Dirigez-vous dans la foule pour trouver l'objet.</li>
+						<li><strong>Regle 2 :</strong> Utilisez le son pour vous repérer dans la scène.</li>
+						<li><strong>Regle 3 :</strong> Cliquez sur l'objet recherché pour terminer le niveau.</li>
 					</ul>
 										
 					<div id="compteRebour_affiche"></div>
@@ -58,11 +57,10 @@
 		
 		<div class="md-modal md-effect-17 fin-niveau-un" id="modal-17">
 			<div class="md-content">
-				<h3>Bravo ! Tu as terminé le niveau 1</h3>
+				<h3>Bravo !</h3>
 				<div>
-					<p>Accéder au niveau 2</p>
-					<ul>
-					</ul>
+					<p>Tu as terminé avec succès le niveau 1.</p>
+					
 					<button class="md-close goToNiveauDeux" onclick="AllerNiveauDeux(); StartChrono();">Niveau suivant</button>
 				</div>
 			</div>
@@ -74,9 +72,9 @@
 
 				<div class="md-modal md-effect-17 fin-niveau-deux" id="modal-17">
 			<div class="md-content">
-				<h3>Bravo ! Tu as terminé le niveau 2</h3>
+				<h3>Bravo !</h3>
 				<div>
-					<p>Accéder au niveau 3</p>
+					<p>Tu as terminé avec succès le niveau 2.</p>
 					<ul>
 					</ul>
 					<button class="md-close goToNiveauTrois" onclick="AllerNiveauTrois(); StartChrono();">Niveau suivant</button>
