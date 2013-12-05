@@ -1,9 +1,50 @@
 // *****************
+function getPosEl(el) {
+    var lx = el.offsetLeft;
+        var ly = el.offsetTop;
+        console.log('el : x='+lx+' y='+ly);
+    return {x: lx,y: ly};
+}
+
+function getPosMouse(event){
+        //merci à http://b2moo.free.fr/tutorials/mouse/coord.htm
+        event = event || window.event;
+        var x = event.clientX;
+        var y = event.clientY;
+        console.log('souris : x='+x+' y='+y);
+        return {x: x,y: y};
+}
+
+function setVolumeSonDistance(event, eId, sId){
+
+        var el = document.getElementById(eId);
+        var pS = getPosMouse(event);
+        var pE = getPosEl(el);
+        
+        //merci à http://snipplr.com/view/47207/
+        var xs = 0;
+        var ys = 0;
+        xs = pS.x - pE.x;
+        xs = xs * xs;
+        ys = pS.y - pE.y;
+        ys = ys * ys;
+        d = Math.sqrt( xs + ys );
+        
+        var vSon = ((1000-d)/1000*100)*0.01;
+        console.log("distance de "+eId+" avec la souris = "+d+" vSon="+vSon);
+        
+        myVid=document.getElementById(sId);
+        myVid.volume=vSon;
+        
+    return d;
+
+}
+
 // NIVEAU 2
 
 // Supprimer la page #niveau-un et afficher #niveau-deux
 function AllerNiveauDeux() {
-document.getElementById("niveau-un").style.display ="none";   
+document.getElementById("niveau-un").style.display ="none";
 document.getElementById("niveau-deux").style.display = "block";
 }
 
@@ -12,15 +53,15 @@ document.getElementById("niveau-deux").style.display = "block";
 
 // Supprimer la page #niveau-un et afficher #niveau-deux
 function AllerNiveauTrois() {
-document.getElementById("niveau-un").style.display ="none"; 
-document.getElementById("niveau-deux").style.display ="none";     
+document.getElementById("niveau-un").style.display ="none";
+document.getElementById("niveau-deux").style.display ="none";
 document.getElementById("niveau-trois").style.display = "block";
 }
 
 //*****************
 // Initialisation du chronomètre
 var timercount = 0;
-var timestart  = null;
+var timestart = null;
  
 function showtimer() {
     if(timercount) {
@@ -50,9 +91,9 @@ function showtimer() {
 // Lancer le chronomètre
 function StartChrono(){
     if(!timercount){
-    timestart   = new Date();
+    timestart = new Date();
     document.timeform.timetextarea.value = "00:00";
-    timercount  = setTimeout("showtimer()", 1000);
+    timercount = setTimeout("showtimer()", 1000);
     }
     else{
     var timeend = new Date();
@@ -88,7 +129,7 @@ function Reset() {
 function StopChrono() {
     if(timercount) {
         clearTimeout(timercount);
-        timercount  = 0;
+        timercount = 0;
         var timeend = new Date();
         var timedifference = timeend.getTime() - timestart.getTime();
         timeend.setTime(timedifference);
@@ -108,25 +149,25 @@ function StopChrono() {
 //******************
 // Afficher les règles
 function AfficheRegles(){
-	$('#modal-16').addClass("md-show");	
+        $('#modal-16').addClass("md-show");        
 }
 
 function RemoveRegles(){
-	$('.md-close').click(function() {
-	$('#modal-16').removeClass("md-show");		
+        $('.md-close').click(function() {
+        $('#modal-16').removeClass("md-show");                
 });
 }
 
 // ******************
 // Afficher Succès niveau Un
 function AfficheFinNiveauUn(){
-	$('.fin-niveau-un').addClass("md-show");	
+        $('.fin-niveau-un').addClass("md-show");        
 }
 
 // ******************
 // Afficher Succès niveau Deux
 function AfficheFinNiveauDeux(){
-	$('.fin-niveau-deux').addClass("md-show");	
+        $('.fin-niveau-deux').addClass("md-show");        
 }
 
 // *****************
@@ -159,7 +200,7 @@ function AfficheFinNiveauDeux(){
         }
         else
         {
-	            document.getElementById("compteRebour_affiche").style.display ="none";       		
+         document.getElementById("compteRebour_affiche").style.display ="none";                 
                 document.getElementById("start-niveau-un").style.display = 'block';
         }
 }
