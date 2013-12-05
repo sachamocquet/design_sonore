@@ -1,4 +1,9 @@
+// *****************
+// Faire apparaitre les pop-up explicatifs / félicitations
+
 var ModalEffects = (function() {
+
+	// Initialiser la fonction
 
 	function init() {
 
@@ -8,6 +13,8 @@ var ModalEffects = (function() {
 
 			var modal = document.querySelector( '#' + el.getAttribute( 'data-modal' ) ),
 				close = modal.querySelector( '.md-close' );
+				
+	// Supprimer le pop-up
 
 			function removeModal( hasPerspective ) {
 				classie.remove( modal, 'md-show' );

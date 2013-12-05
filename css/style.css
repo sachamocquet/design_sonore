@@ -1,34 +1,41 @@
+/** Normalization **/
 *{
-padding: 0;
-margin: 0;
+	padding: 0;
+	margin: 0;
+}
+
+html { 
+	margin:0;
+	padding:0;
+	overflow: hidden;
+}
+
+#mobile-devices-support{
+	display: none;
 }
 
 a{
 	cursor:default;
 }
 
-html { 
-  margin:0;
-  padding:0;
-  overflow: hidden;
-  font-family: 'Lato', sans-serif;
-}
-
-body{
-	font-family: 'Lato', sans-serif;
-}
-
 /** HEADER : CHRONO + SCORE **/
-
 header{
-	background-color: #FFF;
+	background-color: #E74C3C;
 	height: 30px;
+	color: #fff;
 	padding-top: 10px;
-	font-family: 'Lato', sans-serif;
+	-moz-box-shadow: 0 1px 5px #A1AFB5;
+	-webkit-box-shadow: 0 1px 5px #A1AFB5; 
+	box-shadow: 0 1px 5px #A1AFB5; 
 }
 
 #temps-chrono{
 	text-align: center;	
+}
+
+.note-nb{
+	font-size: 10px;
+	font-style: italic;
 }
 
 #currentscore{
@@ -37,55 +44,248 @@ header{
 	top: 10px;
 }
 
+.bt-recommencer{
+	position: absolute;
+	left: 7px;
+	top: 5px;	
+}
+
+.bt-recommencer-fin{
+	margin-bottom: -15px !important;
+    margin-top: 10px !important;
+    position: relative;
+	background: #F39990;
+}
+
+.bt-recommencer-fin:hover {
+	background: #F3796C;
+}
+
+.bt-share-facebook {
+	border: none;
+	padding: 0.4em 1em;
+	position: absolute;
+	background: #4682B4;
+	color: #fff;
+	font-size: 1em;
+	letter-spacing: 1px;
+	cursor: pointer;
+	display: inline-block;
+	margin: -28px 2px 3px 160px;
+}
+
+.bt-share-facebook:hover {
+	background: #38678F;
+}
+
+.bt-share-facebook-final {
+	border: none;
+	padding: 0.4em 1em;
+	position: relative;
+	background: #4682B4;
+	color: #fff;
+	font-size: 1em;
+	letter-spacing: 1px;
+	cursor: pointer;
+	display: inline-block;
+	margin: -28px 2px 3px 160px;
+}
+
+.bt-share-facebook-final:hover {
+	background: #38678F;
+}
+
+#show-message-score-tres-bon-niv-un, 
+#show-message-score-bon-niv-un, 
+#show-message-score-mauvais-niv-un, 
+#show-message-score-tres-bon-niv-deux, 
+#show-message-score-bon-niv-deux, 
+#show-message-score-mauvais-niv-deux, 
+#show-message-score-tres-bon-niv-trois, 
+#show-message-score-bon-niv-trois, 
+#show-message-score-mauvais-niv-trois{
+	display: none;	
+	font-size: 14px;
+	margin-bottom: 10px;
+}
+
+.monScore{
+	color: #E74C3C;
+}
+
+#total-points-final{
+	border-top: 1px dashed;
+	border-bottom: 1px dashed;
+	margin-bottom: 20px;	
+}
+
+/** **************** **/
 /** NIVEAU UN **/
 #niveau-un{
 	background: #000 url('../img/charlie.jpg') no-repeat;
-	-moz-background-size: cover;
-	background-size: cover;
-	-webkit-background-size: cover;
-	-o-background-size: cover;
-	background-color: transparent;
-	position: absolute;
-	height: 100%;
-	width: 100%;
+	width: 1000px;
+	height: 650px;
+	margin: 30px auto 0;
+	-moz-box-shadow: 0 1px 5px #A1AFB5;
+	-webkit-box-shadow: 0 1px 5px #A1AFB5; 
+	box-shadow: 0 1px 5px #A1AFB5; 
 }
 
-/** NIVEAU DEUX **/
-#niveau-deux{
-	background: #000 url('../img/charlie-2.jpg') no-repeat;
-	-moz-background-size: cover;
-	background-size: cover;
-	-webkit-background-size: cover;
-	-o-background-size: cover;
-	background-color: transparent;
-	position: absolute;
-	height: 100%;
-	width: 100%;
-	display: none;
-}
-
-/** PLAYER **/
-
+/** OBJET A TROUVER UN **/
 .nav {
 	width: 120px;
 	float: left;
 	list-style: none;
 }
+
 .nav li {
 	position: relative;
 }
-.nav a {
+
+.nav span {
 	display: block;
 	padding: 20px;
 	text-decoration: none;
 	color: white;
-	cursor: default;
+	cursor: pointer;
 	margin-left: 200px;
 	margin-top: 200px;
-	border: 1px solid black;
+	background-color: transparent;
+	-webkit-transition-duration: 0.8s;
+    -moz-transition-duration: 0.8s;
+    -o-transition-duration: 0.8s;
+    transition-duration: 0.8s;
+     
+    -webkit-transition-property: -webkit-transform;
+    -moz-transition-property: -moz-transform;
+    -o-transition-property: -o-transform;
+    transition-property: transform;
+}
+
+.nav span:hover{
+	-webkit-transform:rotate(360deg);
+    -moz-transform:rotate(360deg);
+    -o-transform:rotate(360deg);
 }
 
 .nav audio { 
+	position: absolute; 
+	left: 110%; 
+	top: 10px; 
+	display: block; 
+	height: 30px; 
+	width: 200px; 
+}
+
+/** **************** **/
+/** NIVEAU DEUX **/
+#niveau-deux{
+	background: #000 url('../img/charlie-2.jpg') no-repeat;
+	width: 1000px;
+	height: 650px;
+	margin: 30px auto 0;
+	-moz-box-shadow: 0 1px 5px #A1AFB5;
+	-webkit-box-shadow: 0 1px 5px #A1AFB5; 
+	box-shadow: 0 1px 5px #A1AFB5; 
+	display: none;
+}
+
+/** OBJET A TROUVER DEUX **/
+.nav-two {
+	width: 120px;
+	float: left;
+	list-style: none;
+}
+
+.nav-two li {
+	position: relative;
+}
+
+.nav-two span {
+	display: block;
+	padding: 20px;
+	text-decoration: none;
+	color: white;
+	cursor: pointer;
+	margin-left: 800px;
+	margin-top: 200px;
+	background-color: transparent;
+	-webkit-transition-duration: 0.8s;
+    -moz-transition-duration: 0.8s;
+    -o-transition-duration: 0.8s;
+    transition-duration: 0.8s;
+     
+    -webkit-transition-property: -webkit-transform;
+    -moz-transition-property: -moz-transform;
+    -o-transition-property: -o-transform;
+    transition-property: transform;
+}
+
+.nav-two span:hover{
+	-webkit-transform:rotate(360deg);
+    -moz-transform:rotate(360deg);
+    -o-transform:rotate(360deg);
+}
+
+.nav-two audio { 
+	position: absolute; 
+	left: 110%; 
+	top: 10px; 
+	display: block; 
+	height: 30px; 
+	width: 200px; 
+}
+
+/** **************** **/
+/** NIVEAU TROIS **/
+#niveau-trois{
+	background: #000 url('../img/charlie-3.jpg') no-repeat;
+	width: 1000px;
+	height: 650px;
+	margin: 30px auto 0;
+	-moz-box-shadow: 0 1px 5px #A1AFB5;
+	-webkit-box-shadow: 0 1px 5px #A1AFB5; 
+	box-shadow: 0 1px 5px #A1AFB5; 
+	display: none;
+}
+
+/** OBJET A TROUVER TROIS **/
+
+.nav-three {
+	width: 120px;
+	float: left;
+	list-style: none;
+}
+.nav-three li {
+	position: relative;
+}
+.nav-three span {
+	display: block;
+	padding: 20px;
+	text-decoration: none;
+	color: white;
+	cursor: pointer;
+	margin-left: 500px;
+	margin-top: 500px;
+	background-color: transparent;
+	-webkit-transition-duration: 0.8s;
+    -moz-transition-duration: 0.8s;
+    -o-transition-duration: 0.8s;
+    transition-duration: 0.8s;
+     
+    -webkit-transition-property: -webkit-transform;
+    -moz-transition-property: -moz-transform;
+    -o-transition-property: -o-transform;
+    transition-property: transform;
+}
+
+.nav-three span:hover{
+	-webkit-transform:rotate(360deg);
+    -moz-transform:rotate(360deg);
+    -o-transform:rotate(360deg);
+}
+
+.nav-three audio { 
 	position: absolute; 
 	left: 110%; 
 	top: 10px; 
@@ -98,10 +298,9 @@ header{
 
 button {
 	border: none;
-	padding: 0.6em 1.2em;
+	padding: 0.4em 1em;
 	background: #c0392b;
 	color: #fff;
-	font-family: 'Lato', Calibri, Arial, sans-serif;
 	font-size: 1em;
 	letter-spacing: 1px;
 	text-transform: uppercase;
@@ -126,7 +325,8 @@ button.md-trigger{
 
 .md-modal {
 	position: fixed;
-	top: 50%;
+	min-height: 362px; 
+	top: 40%;
 	left: 50%;
 	width: 50%;
 	max-width: 630px;
@@ -157,9 +357,9 @@ button.md-trigger{
 	z-index: 1000;
 	opacity: 0;
 	background: rgba(240,240,240,0.9);
-	-webkit-transition: all 0.3s;
-	-moz-transition: all 0.3s;
-	transition: all 0.3s;
+	-webkit-transition: all 0s;
+	-moz-transition: all 0s;
+	transition: all 0s;
 }
 
 .md-show ~ .md-overlay {
@@ -171,12 +371,13 @@ button.md-trigger{
 	color: #fff;
 	background: #e74c3c;
 	position: relative;
-	border-radius: 3px;
 	margin: 0 auto;
 }
 
 button#start-niveau-un, button#start-niveau-deux{
 	display: none;
+	margin-top:15px;
+	margin-bottom:-15px;
 }
 
 #compteRebour_affiche{
@@ -216,7 +417,7 @@ button#start-niveau-un, button#start-niveau-deux{
 
 .md-content > div ul {
 	margin: 0;
-	padding: 0 0 30px 20px;
+	padding:0 0 10px 20px;
 }
 
 .md-content > div ul li {
@@ -230,14 +431,9 @@ button#start-niveau-un, button#start-niveau-deux{
 }
 
 /** OUVERTURE POP EXPLICATIVE **/
+
 .md-show.md-effect-16 ~ .md-overlay {
 	background-color: #FFF;
-}
-
-.md-show.md-effect-16 ~ .container {
-	-webkit-filter: blur(3px);
-	-moz-filter: blur(3px);
-	filter: blur(3px);
 }
 
 .md-effect-16 .md-content {
@@ -261,6 +457,12 @@ button#start-niveau-un, button#start-niveau-deux{
 	-ms-transform: translateY(0);
 	transform: translateY(0);
 	opacity: 1;
+}
+
+.md-content a{
+	color: #962014;
+	text-decoration: none;
+	cursor: pointer;
 }
 
 /* Ouverture POP-UP SUCCES NIVEAU */
@@ -300,4 +502,103 @@ button#start-niveau-un, button#start-niveau-deux{
 	-webkit-transition: all 0.3s 0.2s;
 	-moz-transition: all 0.3s 0.2s;
 	transition: all 0.3s 0.2s;
+}
+
+/* **************************************** */
+/* MEDIA QUERIES */
+
+/* *********** */
+/* TABLETTES */
+@media screen and (max-width: 767px) {
+
+body{
+	background-color: #E74C3C;
+}
+
+html{
+	background-color: #E74C3C;	
+}
+
+#mobile-devices-support{
+	background: url("../img/mobile-devices.png") no-repeat;
+	display: block;
+    height: 114px;
+    left: 50%;
+    margin-left: -112px;
+    margin-top: -57px;
+    position: absolute;
+    top: 50%;
+    width: 224px;
+    background-size: 224px;
+    z-index: 9999;
+    }
+    
+.md-modal{
+	display: none;
+}
+    
+.md-show.md-effect-16 ~ .md-overlay{
+	background-color: #E74C3C;
+}
+
+#niveau-un, 
+#niveau-deux, 
+#niveau-trois, 
+header, 
+form, 
+.bt-share-facebook, 
+#currentscore, 
+.bt-recommencer{
+	display: none;
+}
+
+}
+
+/* *********** */
+/* SMARTPHONES */
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+
+body{
+	overflow: hidden;
+	background-color: #E74C3C;
+}
+
+html{
+	background-color: #E74C3C;	
+}
+
+#mobile-devices-support{
+	background: url("../img/mobile-devices.png") no-repeat;
+	display: block;
+    height: 114px;
+    left: 50%;
+    margin-left: -112px;
+    margin-top: -57px;
+    position: absolute;
+    top: 50%;
+    width: 224px;
+    background-size: 224px;
+    z-index: 9999;
+}
+    
+.md-modal{
+	display: none;
+}
+    
+.md-show.md-effect-16 ~ .md-overlay{
+	 background-color: #E74C3C;
+}
+
+#niveau-un, 
+#niveau-deux, 
+#niveau-trois, 
+header, 
+form, 
+button, 
+#currentscore, 
+.bt-share-facebook, 
+.bt-recommencer{
+	display: none;
+}
+	
 }
